@@ -26,7 +26,7 @@ class color:
 	BOLD = '\033[1m'
 	UNDERLINE = '\033[4m'
 	END = '\033[0m'
-	
+
 def timewarp(x):
 	global timeline
 	global sack
@@ -50,7 +50,7 @@ def checkshot(x,y):
 		return "Kill Confirmed. Mission Accomplished."
 	else:
 		return "Shot missed, guards allerted.\nMission Failed"
-		
+
 slwreveal2("Text Adventure Game",.05)
 time.sleep(1)
 print("\nHow far can you go?\n")
@@ -76,7 +76,7 @@ timewarp1=cleanup(input("What year is it?> "))
 timewarp(timewarp1)
 print("\n"+color.BOLD+timeline+color.END+"\n")
 #EVENTS Ch. 1
-if timeline == "modern ": 
+if timeline == "modern ":
 	input("Press Enter to continue...")
 	print("'Right, right.....' you think. Gazing out the window of your apartment in homey Saint Albans, Vermont")
 	print("\nYou put on some casual clothing, stuffed your phone in your pocket, and headed outside.")
@@ -140,7 +140,7 @@ if timeline == "modern ":
 			print("\n		A "+color.BOLD+"Sniper Rifle"+color.END+" has been added to your inventory.")
 			print("\n		"+color.BOLD+"35 srounds"+color.END+" have been added to your inventory.") #container NOT sack stackable
 			sack += ["Sniper"]
-			container["srounds"] = 35 
+			container["srounds"] = 35
 			print("\n		You have: "+" ".join(sack)+" in your inventory.")
 			print("\n		You have: "+str(container)+" in your container.\n")
 			print("You creep through bushes and trees, heading towards the compound.\nYou are about 1.5 km away.\n") #change environment for country
@@ -224,7 +224,7 @@ if timeline == "modern ":
 					elif outtext=="Shot missed, guards allerted.\nMission Failed":
 						timeline = "modern 1 fail"
 						input("Press Enter to Continue")
-			
+
 			elif path=="lower":
 				timeline += " lower"
 				print("You decided to stick to lower grounds.")
@@ -236,16 +236,16 @@ if timeline == "modern ":
 				print("\nYou are shot on the spot.")
 				input("Press Enter to continue...")
 				timeline="DEAD"
-				
-			
+
+
 	if timeline == "modern 2":
 		timeline = "modern 2 fail"
 		print("You are not old enough to drive to the rendevous.")
 		print("Mission 1 unable to complete.")
 		input("Press Enter to Continue...")
-	
+
 	if timeline == "modern 1 CH1" or timeline == "modern 1 fail" or timeline == "modern 2 fail":
-		os.system("clear") 
+		os.system("clear")
 		print("Before we can continue, I am required to ask you a really important question.\n")
 		time.sleep(2)
 		print("Will you take the "+color.RED+"RED "+color.END+"pill, or the "+color.BLUE+"BLUE "+color.END+"pill?\n")
@@ -359,7 +359,7 @@ if timeline == "modern ":
 				elif Person1whoru2 == str(4):
 					print("Seriously?")
 					timeline="DEAD"
-				
+
 			elif Person1whoru == str(2):
 				print("'Well that's no way to talk, young man!'\n He walks away, but you have a feeling that this was a mistake.")
 				timeline += " enemy"
@@ -369,7 +369,7 @@ if timeline == "modern ":
 				print("'Oh that's just fine my boy, I intend to figure out why so many have been invited for no reason. In the meantime, you have yourself a good time!'\n")
 				time.sleep(1.5)
 				print("Well done!")
-				timeline += " none" 
+				timeline += " none"
 			elif Person1whoru == str(4):
 				slwreveal2(". . .\n",.5)
 				print("What is wrong with you?")
@@ -466,7 +466,7 @@ if timeline == "modern ":
 				if twomen == str(1):
 					print("You walk up to the other side of the truck, and slam the first mans head into the truck. HARD. Then you flipped him over your hip.\nHe lands hard on the ground. You drop two quick punches on his face.\nHe knocks out cold.")
 					time.sleep(2)
-					print("You quickly look up for the second man...")						
+					print("You quickly look up for the second man...")
 					time.sleep(2)
 					print("...who ran away in order to alert guards.")
 					timeline="modern CH1 fail"
@@ -581,7 +581,7 @@ if timeline == "modern ":
 					print("Probably best to leave. Would you like to search the room?\n")
 					yn=cleanup(input("Yes or No > "))
 					if yn == "yes":
-						print("You sneak into the room, like a creep, and start going through all the drawers and furniture for something usefull.")							
+						print("You sneak into the room, like a creep, and start going through all the drawers and furniture for something usefull.")
 						time.sleep(2)
 						print("\nYou find nothing\n")
 						input("Press Enter to Continue...")
@@ -804,8 +804,8 @@ if timeline == "modern ":
 				else:
 					print("What...what are you doing?")
 					#fix
-				
-					
+
+
 			elif move4 == str(2):
 				print("You try to go to the private lounge.")
 				print("\nYou show your keycard to the guards by the door.")
@@ -817,19 +817,19 @@ if timeline == "modern ":
 					container["suspicion"] += 1
 				if " waitor" in timeline:
 					print("In order to act naturally with your waitor suit on, you head to the bar.")
-					
-				
+
+
 			elif move4 == str(3):
-				print("Eh.") # finish later
-			
-				  
-										
+				print("Eh...") # finish later
+
+
+
 if timeline == "DEAD":
 	slwreveal2("GAME OVER",.12)
 	time.sleep(1)
 	print("YOU LOSE\n"*500)
 	sys.exit()
-	
+
 if timeline == "medieval ":
 	print("Not done yet")
 if timeline == "ancient ":
