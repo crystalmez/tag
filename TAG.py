@@ -712,11 +712,11 @@ if timeline == "modern ":
 			print("Downstairs, you see another long hallway. Through the door on the left, you see there is a small laundry room.")
 			print("You walk in to find your typical cleaning supplies and a long line of washers and dryers.")
 			while True:
+				print("\n1-Search cleaning supplies")
 				if " out" not in timeline:
-					print("\n1-Search cleaning supplies")
-				print("\n2-Search washers and dryers.")
+					print("\n2-Search washers and dryers.")
 				lawndree=cleanup(input("> "))
-				if lawndree == str(1):
+				if lawndree == str(2):
 					if " waitor" not in timeline:
 						print("In one of the dryers, you find a waitors outfit.")
 						print("Put on waitor disguise?")
@@ -724,7 +724,7 @@ if timeline == "modern ":
 						if clothe1 == "yes":
 							timeline += " waitor"
 					input("Press Enter to continue...")
-				elif lawndree == str(2):
+				elif lawndree == str(1):
 					print("You find a wide assortment of cleaning products: ")
 					while True:
 						if "Air Freshener" not in sack:
@@ -773,11 +773,11 @@ if timeline == "modern ":
 			if "Bleach" in sack and "Ammonia" in sack:
 				print("You mixed the "+color.BOLD+"BLEACH"+color.END+" and the "+color.BOLD+"AMMONIA"+color.END+" together, and kept the concoction in a small bottle.")
 				print("Enough to do a lot of harm.")
-					sack.remove("Bleach")
-					sack.remove("Ammonia")
-					sack += ["Drug"]
-					print("\n		You have: "+" ".join(sack)+", in your inventory.\n")
-					input("Press Enter to Continue...")
+				sack.remove("Bleach")
+				sack.remove("Ammonia")
+				sack += ["Drug"]
+				print("\n		You have: "+" ".join(sack)+", in your inventory.\n")
+				input("Press Enter to Continue...")
 			print("\n*IMPORTANT DECISION*")
 			print("\n1-Head to kitchen")
 			if " keycard" in sack:
